@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wmcleaner"
+version = "0.3.1"
+description = "Detect and clean watermarks from authorized comic/manhua images using conservative masks and LaMa/OpenCV reconstruction."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = {text = "MIT"}
+authors = [{name = "wmcleaner contributors"}]
+keywords = ["watermark", "inpainting", "opencv", "lama", "comic", "image-processing"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+]
+dependencies = [
+  "numpy>=1.24.3,<2.0",
+  "opencv-python>=4.8,<5",
+  "Pillow>=9.5,<11",
+  "requests>=2.31,<3",
+  "beautifulsoup4>=4.12,<5",
+  "selenium>=4.25,<5",
+]
+
+[project.urls]
+Repository = "https://github.com/PhilippZinniel/wmcleaner"
+
+[project.optional-dependencies]
+lama = ["simple-lama-inpainting==0.1.2"]
+
+[project.scripts]
+wmclean = "wmcleaner.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wmcleaner*"]
+
+[tool.setuptools.package-data]
+wmcleaner = ["templates/*.png"]

@@ -1,0 +1,71 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Virtual environments and local Python runtimes
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging and build output
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+*.egg
+
+# Test and coverage output
+.coverage
+.coverage.*
+htmlcov/
+
+# Project-generated media and output directories
+artifacts/
+*_cleaned/
+*_masks/
+*.mask.png
+*.debug.png
+
+# Local patch snapshots and merge leftovers
+*.patch
+*.diff
+*.orig
+*.rej
+
+# Large archives and local run-output image dirs (never publish raw)
+*.rar
+*.zip
+ground_truth/
+current/
+previous/
+source/
+_replaced/
+
+# Downloaded model weights / caches
+.cache/
+models/
+*.pth
+*.pt
+*.onnx
+
+# IDE and editor metadata
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
